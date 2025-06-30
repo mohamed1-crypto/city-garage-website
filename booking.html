@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Service - City Centre Garage</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function simulateBooking(event) {
+      event.preventDefault();
+      document.getElementById('booking-form').reset();
+      document.getElementById('confirmation').style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Book an Appointment</h1>
+   <nav>
+  <ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="quotation.html">Get Quotation</a></li>
+    <li><a href="booking.html">Book Service</a></li>
+    <li><a href="services_tarifs.html">Services & Tarifs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="admin_login.html">Admin Login</a></li>
+    <li><a href="mechanic_login.html">Mechanic Login</a></li>
+  </ul>
+</nav>
+  </header>
+  <main>
+    <form id="booking-form" onsubmit="simulateBooking(event)" aria-label="Booking form">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" placeholder="Your Name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Email Address" required>
+
+      <label for="vehicle">Vehicle Type</label>
+      <select id="vehicle" required>
+        <option value="">Select vehicle type</option>
+        <option>SUV</option>
+        <option>Minibus</option>
+        <option>Convertible</option>
+        <option>Other</option>
+      </select>
+
+      <label for="service">Service Type</label>
+      <select id="service" required>
+        <option value="">Select service</option>
+        <option>Minor Repair</option>
+        <option>Major Repair</option>
+        <option>General Service</option>
+        <option>Health Check</option>
+        <option>MOT</option>
+      </select>
+
+      <label for="date">Date (Mon-Fri)</label>
+      <input type="date" id="date" required min="<?= date('Y-m-d'); ?>">
+
+      <label for="time">Time (09:00 - 18:00)</label>
+      <input type="time" id="time" required min="09:00" max="18:00">
+
+      <button type="submit">Book</button>
+    </form>
+    <div id="confirmation" style="display:none; margin-top:20px;">
+      <h2>Booking Confirmed!</h2>
+      <p>Your booking has been submitted.<br>
+      Please arrive 10 minutes early.<br>
+      Payment is made on site.</p>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 City Centre Garage</p>
+  </footer>
+</body>
+</html>
