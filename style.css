@@ -674,3 +674,15 @@ form button {
 form button:hover {
   background-color: #002244;
 }
+footer a {
+  color: #ffffff; /* white text */
+  text-decoration: none;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #ffd700; /* gold on hover */
+}
+

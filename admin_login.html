@@ -7,8 +7,14 @@
   <script>
     function simulateAdminLogin(event) {
       event.preventDefault();
-      document.getElementById('login-section').style.display = 'none';
-      document.getElementById('dashboard').style.display = 'flex';
+      const u = document.getElementById('admin-username').value;
+      const p = document.getElementById('admin-password').value;
+      if (u === 'admin' && p === '1234') {
+        document.getElementById('login-section').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'flex';
+      } else {
+        alert('Invalid admin login!');
+      }
     }
 
     function logoutAdmin() {
@@ -30,8 +36,6 @@
         <li><a href="booking.html">Book Service</a></li>
         <li><a href="services_tarifs.html">Services & Tarifs</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="admin_login.html" class="active">Admin Login</a></li>
-        <li><a href="mechanic_login.html">Mechanic Login</a></li>
       </ul>
     </nav>
   </header>
@@ -68,21 +72,23 @@
             <li><strong>felix:</strong> How much for a major repair on a minibus?</li>
             <li><strong>Paul:</strong> Do you have Saturday slots?</li>
           </ul>
-          <p><em>You can add a reply function here later.</em></p>
         </div>
 
         <div class="card" id="bookings">
           <h3>📅 Bookings Overview</h3>
           <p>Total Bookings This Week: <strong>12</strong></p>
           <p>Available Slots Remaining: <strong>8</strong></p>
-          <p><em>Fetch these from your real booking system later.</em></p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 City Centre Garage</p>
+    <p>&copy; 2025 City Centre Garage | 
+      <a href="admin_login.html">Admin</a> | 
+      <a href="mechanic_login.html">Mechanic</a>
+    </p>
   </footer>
 </body>
 </html>
+

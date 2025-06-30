@@ -7,8 +7,14 @@
   <script>
     function simulateMechanicLogin(event) {
       event.preventDefault();
-      document.getElementById('login-section').style.display = 'none';
-      document.getElementById('dashboard').style.display = 'flex';
+      const u = document.getElementById('mech-username').value;
+      const p = document.getElementById('mech-password').value;
+      if (u === 'mech' && p === '4321') {
+        document.getElementById('login-section').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'flex';
+      } else {
+        alert('Invalid mechanic login!');
+      }
     }
 
     function logoutMechanic() {
@@ -30,8 +36,6 @@
         <li><a href="booking.html">Book Service</a></li>
         <li><a href="services_tarifs.html">Services & Tarifs</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="admin_login.html">Admin Login</a></li>
-        <li><a href="mechanic_login.html" class="active">Mechanic Login</a></li>
       </ul>
     </nav>
   </header>
@@ -68,14 +72,16 @@
             <tr><td>2025-06-25</td><td>13:00</td><td>Major Repair - Minibus</td></tr>
             <tr><td>2025-06-26</td><td>09:00</td><td>General Service - Convertible</td></tr>
           </table>
-          <p><em>(This is a simulated schedule panel. Here, the mechanic can see his reserved slots.)</em></p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 City Centre Garage</p>
+    <p>&copy; 2025 City Centre Garage | 
+      <a href="admin_login.html">Admin</a> | 
+      <a href="mechanic_login.html">Mechanic</a>
+    </p>
   </footer>
 </body>
 </html>
